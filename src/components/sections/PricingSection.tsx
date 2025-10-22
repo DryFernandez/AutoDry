@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 const plans = [
   {
     name: 'Starter',
-    icon: <FaRocket size={40} />,
+    icon: <FaRocket size={30} />,
     description: 'Perfecto para comenzar a automatizar',
     monthlyPrice: 99,
     yearlyPrice: 950,
@@ -25,7 +25,7 @@ const plans = [
   },
   {
     name: 'Professional',
-    icon: <FaStar size={40} />,
+    icon: <FaStar size={30} />,
     description: 'Para equipos que quieren escalar',
     monthlyPrice: 299,
     yearlyPrice: 2850,
@@ -43,7 +43,7 @@ const plans = [
   },
   {
     name: 'Enterprise',
-    icon: <FaCrown size={40} />,
+    icon: <FaCrown size={30} />,
     description: 'Soluciones a medida para empresas',
     monthlyPrice: 799,
     yearlyPrice: 7600,
@@ -71,8 +71,8 @@ export default function PricingSection() {
   };
 
   return (
-    <section id="precios" className="py-16 md:py-24 lg:py-32 bg-black">
-        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+    <section id="precios" className="py-16 flex justify-center items-center h-screen md:py-24 lg:py-32 bg-black">
+        <div className="w-full h-[90vh] flex flex-col justify-around max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -80,10 +80,10 @@ export default function PricingSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 md:mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
             Planes y <span className="text-[#E50914]">precios</span>
           </h2>
-          <p className="text-base md:text-xl text-gray-400 max-w-3xl mx-auto mb-8 md:mb-10">
+          <p className="text-base md:text-lg text-gray-400 max-w-3xl mx-auto mb-8 md:mb-10">
             Elige el plan perfecto para tu negocio. Sin sorpresas, sin costos ocultos.
           </p>
 
@@ -179,18 +179,18 @@ export default function PricingSection() {
                   </motion.div>
 
                   {/* Plan Name */}
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  <h3 className="text-1xl md:text-2xl font-bold text-white mb-2">
                     {plan.name}
                   </h3>
-                  <p className="text-sm md:text-base text-gray-400 mb-4 md:mb-6">{plan.description}</p>
+                  <p className="text-xs md:text-sm text-gray-400 mb-4 md:mb-6">{plan.description}</p>
 
                   {/* Price */}
                   <div className="mb-6 md:mb-8">
                     <div className="flex items-baseline">
-                      <span className="text-3xl md:text-5xl font-bold text-white">
+                      <span className="text-2xl md:text-4xl font-bold text-white">
                         ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                       </span>
-                      <span className="text-sm md:text-base text-gray-400 ml-2">
+                      <span className="text-xs md:text-sm text-gray-400 ml-2">
                         /{isYearly ? 'año' : 'mes'}
                       </span>
                     </div>
@@ -202,11 +202,11 @@ export default function PricingSection() {
                   </div>
 
                   {/* Features */}
-                  <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+                  <ul className="space-y-3 md:space-y-4 mb-8 md:mb-10">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2 md:gap-3">
                         <FaCheck className="text-[#E50914] mt-1 flex-shrink-0 text-sm md:text-base" />
-                        <span className="text-sm md:text-base text-gray-300">{feature}</span>
+                        <span className="text-xs md:text-sm text-gray-300">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -216,6 +216,7 @@ export default function PricingSection() {
                     fullWidth
                     variant={plan.popular ? 'contained' : 'outlined'}
                     size="large"
+                    style={{ marginTop: '10px' }}
                     onClick={() =>
                       handleSelectPlan(
                         plan.name,
@@ -227,7 +228,7 @@ export default function PricingSection() {
                       color: plan.popular ? 'white' : '#E50914',
                       borderColor: '#E50914',
                       padding: { xs: '12px', md: '14px' },
-                      fontSize: { xs: '14px', md: '16px' },
+                      fontSize: { xs: '12px', md: '14px' },
                       fontWeight: 'bold',
                       borderRadius: '12px',
                       textTransform: 'none',

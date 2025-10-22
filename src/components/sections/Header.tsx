@@ -50,7 +50,7 @@ export default function Header() {
   }
 
   const drawer = (
-    <div className="h-full flex justify-center items-center w-full bg-black text-white p-6">
+    <div className="h-full w-full text-white p-6">
       <div className="flex justify-between items-center mb-8">
         <div className="flex items-center gap-2">
           <FaRobot className="text-[#E50914] text-3xl" />
@@ -100,7 +100,7 @@ export default function Header() {
   );
 
   return (
-    <>
+    <div>
       <AppBar
         position="fixed"
         color="transparent"
@@ -109,7 +109,7 @@ export default function Header() {
         }`}
         elevation={scrolled ? 4 : 0}
       >
-        <Toolbar className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+                <Toolbar className="w-full max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="w-full grid grid-cols-3 items-center">
             {/* Left: Logo */}
             <motion.div
@@ -125,7 +125,7 @@ export default function Header() {
             </motion.div>
 
             {/* Center: Nav items */}
-            <div className="hidden md:flex items-center justify-center gap-6">
+            <div className="hidden md:flex items-center justify-center  gap-6">
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.label}
@@ -223,6 +223,6 @@ export default function Header() {
       >
         {drawer}
       </Drawer>
-    </>
+    </div>
   );
 }

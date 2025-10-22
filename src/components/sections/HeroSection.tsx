@@ -4,7 +4,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@mui/material';
 import { FaRocket, FaCogs, FaChartLine } from 'react-icons/fa';
-import { SiN8N } from 'react-icons/si';
 
 export default function HeroSection() {
   const scrollToContact = () => {
@@ -15,7 +14,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="inicio" className="relative min-h-screen bg-black text-white overflow-hidden flex items-center pt-24 md:pt-28">
+    <section id="inicio" className="relative flex min-h-screen bg-black text-white overflow-hidden items-center pt-24 md:pt-28">
       {/* Animated Background */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-10 md:top-20 left-5 md:left-10 w-48 h-48 md:w-72 md:h-72 bg-[#E50914] rounded-full filter blur-[100px] md:blur-[120px] animate-pulse"></div>
@@ -38,25 +37,13 @@ export default function HeroSection() {
         <FaChartLine size={50} />
       </motion.div>
 
-      <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-20 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-4 md:mb-6"
-          >
-            <div className="inline-flex items-center gap-2 bg-[#E50914]/10 border border-[#E50914] rounded-full px-4 md:px-6 py-2 mb-6 md:mb-8">
-              <SiN8N className="text-[#E50914] text-xl md:text-2xl" />
-              <span className="text-xs md:text-sm font-semibold">Powered by n8n</span>
-            </div>
-          </motion.div>
-
+      <div className="w-full max-w-screen-2xl rounded-3xl items-center justify-center flex mx-auto px-4 md:px-6 lg:px-8 py-24 md:py-32 relative z-10">
+        <div className="w-full max-w-7xl mx-auto text-center flex flex-col justify-center gap-6 md:gap-8">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 md:mb-8 leading-tight"
+            className=" text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
           >
             Automatiza tu negocio con{' '}
             <span className="text-[#E50914]">inteligencia</span>
@@ -66,7 +53,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-10 md:mb-14 max-w-4xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-7xl mx-auto leading-relaxed text-center"
           >
             Transformamos procesos manuales en flujos automatizados que ahorran tiempo, 
             reducen errores y aumentan tu productividad hasta en un 80%.
@@ -133,7 +120,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-10 mt-16 md:mt-24"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-10"
           >
             {[
               { number: '500+', label: 'Automatizaciones creadas' },

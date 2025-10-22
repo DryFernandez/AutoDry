@@ -15,37 +15,37 @@ import { SiN8N } from 'react-icons/si';
 
 const services = [
   {
-    icon: <FaEnvelope size={40} />,
+    icon: <FaEnvelope size={32} />,
     title: 'Automatización de Email Marketing',
     description: 'Conecta tu CRM con plataformas de email marketing. Envía campañas personalizadas automáticamente basadas en el comportamiento del usuario.',
     color: '#E50914',
   },
   {
-    icon: <FaDatabase size={40} />,
+    icon: <FaDatabase size={32} />,
     title: 'Integración de Bases de Datos',
     description: 'Sincroniza datos entre diferentes sistemas en tiempo real. Migra, actualiza y respalda información sin intervención manual.',
     color: '#E50914',
   },
   {
-    icon: <FaShoppingCart size={40} />,
+    icon: <FaShoppingCart size={32} />,
     title: 'E-commerce Automatizado',
     description: 'Automatiza procesos de pedidos, inventario y notificaciones. Integra tu tienda online con sistemas de logística y contabilidad.',
     color: '#E50914',
   },
   {
-    icon: <FaChartBar size={40} />,
+    icon: <FaChartBar size={32} />,
     title: 'Reportes y Análisis',
     description: 'Genera reportes automáticos con datos de múltiples fuentes. Visualiza KPIs en tiempo real y recibe alertas inteligentes.',
     color: '#E50914',
   },
   {
-    icon: <FaSlack size={40} />,
+    icon: <FaSlack size={32} />,
     title: 'Notificaciones Inteligentes',
     description: 'Configura alertas automáticas en Slack, Teams o Discord. Mantén a tu equipo informado sin esfuerzo manual.',
     color: '#E50914',
   },
   {
-    icon: <FaRobot size={40} />,
+    icon: <FaRobot size={32} />,
     title: 'Workflows Personalizados',
     description: 'Creamos flujos de trabajo a medida para tu negocio. Cualquier proceso repetitivo puede ser automatizado con n8n.',
     color: '#E50914',
@@ -75,23 +75,19 @@ const cardVariants = {
 
 export default function ServicesSection() {
   return (
-    <section id="servicios" className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-black to-gray-900">
-        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+    <section id="servicios" className="py-16 justify-around flex flex-col min-h-screen md:py-24 lg:py-32 bg-gradient-to-b from-black to-gray-900">
+        <div className="w-full h-[90vh] justify-around flex flex-col  max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16 md:mb-20"
+          className="text-center mb-14 md:mb-18"
         >
-          <div className="inline-flex items-center gap-2 bg-[#E50914]/10 border border-[#E50914] rounded-full px-4 md:px-6 py-2 mb-6">
-            <SiN8N className="text-[#E50914] text-lg md:text-xl" />
-            <span className="text-xs md:text-sm font-semibold text-white">Nuestros Servicios</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
+          <h2 className=" text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 md:mb-8">
             Automatizaciones que <span className="text-[#E50914]">transforman</span>
           </h2>
-          <p className="text-base md:text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl  text-gray-400 max-w-3xl mx-auto">
             Soluciones personalizadas con n8n para llevar tu negocio al siguiente nivel
           </p>
         </motion.div>
@@ -101,7 +97,7 @@ export default function ServicesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10"
+          className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10"
         >
           {services.map((service, index) => (
             <motion.div key={index} variants={cardVariants}>
@@ -120,9 +116,9 @@ export default function ServicesSection() {
                   },
                 }}
               >
-                <CardContent className="p-6 md:p-8">
+                <CardContent className="p-4 md:p-6">
                   <motion.div
-                    className="mb-4 md:mb-6 text-[#E50914]"
+                    className="mb-3 md:mb-4 text-[#E50914]"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ type: 'spring', stiffness: 300 }}
                   >
@@ -131,15 +127,15 @@ export default function ServicesSection() {
                   <Typography
                     variant="h5"
                     component="h3"
-                    className="font-bold mb-3 md:mb-4 text-white group-hover:text-[#E50914] transition-colors"
-                    sx={{ fontSize: { xs: '1.25rem', md: '1.5rem' } }}
+                    className="font-bold mb-2 md:mb-3 text-white group-hover:text-[#E50914] transition-colors"
+                    sx={{ fontSize: { xs: '1.1rem', md: '1.3rem' } }}
                   >
                     {service.title}
                   </Typography>
                   <Typography 
                     variant="body1" 
                     className="text-gray-400 leading-relaxed"
-                    sx={{ fontSize: { xs: '0.875rem', md: '1rem' } }}
+                    sx={{ fontSize: { xs: '0.813rem', md: '0.938rem' } }}
                   >
                     {service.description}
                   </Typography>
@@ -155,7 +151,7 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-16 md:mt-20"
+          className="text-center mt-12 md:mt-16"
         >
           <p className="text-gray-400 text-base md:text-lg mb-6 md:mb-8">
             ¿No encuentras lo que buscas?

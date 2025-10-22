@@ -59,33 +59,33 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contacto" className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-black to-gray-900">
-        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+    <section id="contacto" className="py-16 h-screen items-center flex md:py-24 lg:py-32 bg-gradient-to-b from-black to-gray-900">
+        <div className="w-full flex flex-col h-[95vh] max-w-7xl justify-around mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16 md:mb-20"
+          className="text-center  mb-16 md:mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
             ¿Listo para <span className="text-[#E50914]">automatizar</span>?
           </h2>
-          <p className="text-base md:text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-sm md:text-base text-gray-400 max-w-3xl mx-auto">
             Contáctanos y descubre cómo podemos transformar tu negocio
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 max-w-6xl mx-auto">
+        <div className="grid justify-center items-center grid-cols-1 lg:grid-cols-2 gap-1 md:gap-2 max-w-7xl mx-auto">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-6 md:p-8"
+            className=" bg-white/5  w-[70%] backdrop-blur-lg border border-white/10 rounded-3xl p-6 md:p-8"
           >
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Envíanos un mensaje</h3>
+            <h3 className="text-xl md:text-2xl w-full h-[10vh] flex items-center justify-center font-bold text-white mb-4 md:mb-6">Envíanos un mensaje</h3>
 
             {success && (
               <Alert severity="success" className="mb-4">
@@ -99,9 +99,9 @@ export default function ContactSection() {
               </Alert>
             )}
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 flex flex-col items-center h-[55vh] justify-center ">
               <TextField
-                fullWidth
+                className='w-[90%] h-[8vh]'
                 label="Nombre completo"
                 variant="outlined"
                 {...register('name')}
@@ -130,7 +130,7 @@ export default function ContactSection() {
               />
 
               <TextField
-                fullWidth
+                className='w-[90%] h-[8vh]'
                 label="Empresa"
                 variant="outlined"
                 {...register('company')}
@@ -159,7 +159,7 @@ export default function ContactSection() {
               />
 
               <TextField
-                fullWidth
+                className='w-[90%] h-[8vh]'
                 label="Email"
                 type="email"
                 variant="outlined"
@@ -189,7 +189,7 @@ export default function ContactSection() {
               />
 
               <TextField
-                fullWidth
+                className='w-[90%] h-[18vh]'
                 label="Mensaje"
                 multiline
                 rows={4}
@@ -221,7 +221,7 @@ export default function ContactSection() {
 
               <Button
                 type="submit"
-                fullWidth
+                className='w-[90%] h-[7vh]'
                 variant="contained"
                 size="large"
                 disabled={loading}
@@ -252,9 +252,9 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-6 md:space-y-8"
+            className="space-y-6 md:space-y-8  w-[100%]"
           >
-            <div>
+            <div className="">
               <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Información de contacto</h3>
               <p className="text-sm md:text-base text-gray-400 mb-6 md:mb-8">
                 Estamos aquí para ayudarte a transformar tu negocio. Contáctanos por cualquiera de estos medios.
