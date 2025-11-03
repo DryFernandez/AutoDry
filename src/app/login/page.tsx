@@ -48,10 +48,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center px-4">
+    <div className=" h-full flex items-center justify-center px-4">
       {/* Background Effects */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#E50914] rounded-full filter blur-[120px] animate-pulse"></div>
+      <div className="absolute inset-0 opacity-20 ">
+        <div className="absolute top-30 left-10 w-72 h-72 bg-[#E50914] rounded-full filter blur-[120px] animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#E50914] rounded-full filter blur-[150px] animate-pulse delay-700"></div>
       </div>
 
@@ -61,7 +61,7 @@ export default function LoginPage() {
         transition={{ duration: 0.8 }}
         className="w-full max-w-md relative z-10"
       >
-        <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 shadow-2xl">
+        <div className="p-8 bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl shadow-2xl">
           {/* Logo */}
           <div className="text-center mb-8">
             <Link href="/" className="inline-flex items-center gap-2 mb-4">
